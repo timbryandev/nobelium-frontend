@@ -1,0 +1,150 @@
+/* Bootstrap customizations */
+$theme-colors: (
+	// 'primary': #007bff,
+		// 'secondary': #6c757d,
+		// 'success': #28a745,
+		// 'waring': #ffc107,
+		// 'danger': #dc3545,
+		// 'info': #17a2b8,
+		// 'light': #f8f9fa,
+		// 'dark': #343a40,
+		// 'primary': #007bff,
+		// 'secondary': #6c757d,
+		// 'success': #28a745,
+		// 'waring': #ffc107,
+		// 'danger': #dc3545,
+		// 'info': #17a2b8,
+		// 'light': #f8f9fa,
+		// 'dark': #343a40
+);
+
+/* Import bootstrap to set changes */
+// @import '~bootstrap/scss/bootstrap';
+@import '~bootswatch/dist/solar/variables';
+@import '~bootstrap/scss/bootstrap';
+@import '~bootswatch/dist/solar/_bootswatch';
+
+/* Now do my stuff over bootstrap if needed */
+
+$color-subtle-dark: darken($light, 20%);
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	font-family: Montserrat;
+}
+
+html {
+	background: url('/images/olav-ahrens-rotne.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+body {
+	min-height: 100vh;
+	background: rgba(0, 43, 54, 0.97);
+}
+
+#root {
+	padding-bottom: 10rem; // accomadate footer
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	text-shadow: 0 0 1px #111;
+	font-family: Fugaz One;
+	font-weight: 400;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+}
+
+h2 {
+	text-align: center;
+	color: $primary;
+}
+
+.container,
+.container-fluid {
+	// max-width: 600px;
+	margin: auto;
+}
+
+#Header {
+	margin-bottom: 2rem;
+
+	.navbar-brand {
+		display: flex;
+		flex-direction: column;
+	}
+
+	h1 {
+		font-size: 1.25rem;
+		margin-top: 0.2rem;
+		color: $light;
+	}
+
+	.logo {
+		height: auto;
+		width: 2rem;
+		fill: $light;
+	}
+
+	.navbar-brand:hover {
+		h1 {
+			color: $color-subtle-dark;
+		}
+
+		.logo {
+			fill: $color-subtle-dark;
+		}
+	}
+}
+
+#Footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 1rem;
+	padding-bottom: 0;
+}
+
+hr {
+	width: 100%;
+}
+
+svg.loading {
+	display: block;
+	margin: auto;
+	width: 200px;
+	height: 200px;
+	background: transparent !important;
+	path {
+		stroke: $primary;
+		transform: scale(0.8);
+		transform-origin: 50px 50px;
+	}
+}
+
+ul {
+	.done {
+		list-style-type: none;
+	}
+	.done:before {
+		content: '✓';
+		color: $teal;
+		margin-left: -1.2rem;
+		padding-right: 0.4rem;
+	}
+}
